@@ -12,7 +12,7 @@ import {
 
 import { fromProtobufObject } from "from-protobuf-object";
 
-type AnyMeta = Record<string, MetadataValue>;
+type AnyMeta = Record<string, MetadataValue | null | undefined>;
 
 type GrpcInterceptorNext<
   Req extends Message,
