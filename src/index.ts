@@ -38,7 +38,7 @@ export type GrpcMethod<
   ResMeta extends AnyMeta
 > = (req: AsObject<Req>, reqMeta?: ReqMeta) => Promise<Result<Res, ResMeta>>;
 
-type Result<T extends Message, Meta> = { data: AsObject<T>; metadata?: Meta };
+type Result<T extends Message, Meta> = AsObject<T> & { __metadata?: Meta };
 
 type AsObject<T extends Message> = ReturnType<T["toObject"]>;
 
@@ -182,8 +182,9 @@ function callGrpcCallback<Req extends Message, Res extends Message>(
           reject(err);
           return;
         }
-        const data = response.toObject() as AsObject<Res>;
-        resolve({ data, metadata: resMeta });
+        const data = response.toObject() as Result<Res, AnyMeta>;
+        data.__metadata = resMeta;
+        resolve(data);
       }
     ).once("metadata", (responseMetadata: Metadata) => {
       resMeta = responseMetadata.getMap();

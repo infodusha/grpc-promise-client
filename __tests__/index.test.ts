@@ -45,9 +45,9 @@ describe("grpcClientFactory", () => {
 
     const bookService = createClient(BookServiceClient);
 
-    const { data } = await bookService.getBook({ name: "Harry Potter" });
+    const res = await bookService.getBook({ name: "Harry Potter" });
 
-    expect(data.book).toEqual(book.toObject());
+    expect(res.book).toEqual(book.toObject());
   });
 
   it("Should run interceptors", async () => {
@@ -79,8 +79,8 @@ describe("grpcClientFactory", () => {
 
     const bookService = createClient(BookServiceClient);
 
-    const { data } = await bookService.getBook({ name: "Heat Wave" });
+    const res = await bookService.getBook({ name: "Heat Wave" });
 
-    expect(data.book).toEqual(book.toObject());
+    expect(res.book).toEqual(book.toObject());
   });
 });

@@ -1,6 +1,6 @@
 {
   "name": "grpc-promise-client",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "grpc-js client promise factory",
   "main": "lib/index.js",
   "scripts": {
