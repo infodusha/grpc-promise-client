@@ -1,0 +1,51 @@
+{
+  "name": "grpc-promise-client",
+  "version": "1.0.0",
+  "description": "grpc-js client promise factory",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "generate": "sh ./__tests__/test-data/generate.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/infodusha/grpc-promise-client.git"
+  },
+  "keywords": [
+    "grpc",
+    "grpc-client",
+    "promise",
+    "promisify"
+  ],
+  "author": "infodusha",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/infodusha/grpc-promise-client/issues"
+  },
+  "homepage": "https://github.com/infodusha/grpc-promise-client#readme",
+  "files": [
+    "lib/",
+    "package.json",
+    "LICENSE",
+    "README.md"
+  ],
+  "devDependencies": {
+    "@types/google-protobuf": "^3.15.12",
+    "@types/jest": "^30.0.0",
+    "grpc_tools_node_protoc_ts": "^5.3.3",
+    "grpc-tools": "^1.13.0",
+    "jest": "^30.0.4",
+    "protoc-gen-grpc-web": "^1.4.2",
+    "protoc-gen-js": "^3.21.2",
+    "ts-jest": "^29.4.0",
+    "typescript": "^5.8.3"
+  },
+  "peerDependencies": {
+    "@grpc/grpc-js": "^1.13.4",
+    "google-protobuf": "^3.21.4"
+  },
+  "dependencies": {
+    "from-protobuf-object": "^1.0.3"
+  }
+}
