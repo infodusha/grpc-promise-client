@@ -1,6 +1,6 @@
 {
   "name": "grpc-promise-client",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "grpc-js client promise factory",
   "main": "lib/index.js",
   "scripts": {
@@ -43,9 +43,9 @@
   },
   "peerDependencies": {
     "@grpc/grpc-js": "^1.13.4",
-    "google-protobuf": "^4.0.0"
+    "google-protobuf": "^3.21.2"
   },
   "dependencies": {
-    "from-protobuf-object": "^2.0.1"
+    "from-protobuf-object": "^2.0.2"
   }
 }
